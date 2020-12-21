@@ -13,6 +13,38 @@ class loginScreen extends React.Component {
         }
     }
 
+    handleLogin() {
+        ///Login handelen en informatie opsturen en checken tegen AWS
+        try {
+            let username = this.state.username
+            let password = this.state.password
+
+            // Hier moet AWS shit gebeuren
+
+            this.handleNavigation()
+            console.log('Login Succesfull')
+
+        } catch(error) {
+            alert('Fout bij Login')
+        }
+    }
+
+    handleSignUp() {
+        ///Sign up handelen en informatie opsturen en checken tegen AWS, vervolgens inloggen.
+        try {
+            let username = this.state.username
+            let password = this.state.password
+
+            // Hier meot AWS shit gebeuren
+
+            this.handleNavigation()
+            console.log('Sign Up succesfull')
+
+        } catch(error) {
+            alert('Fout bij Sign Up')
+        }
+    }
+
     handleNavigation() {
         if (this.state.adminMode == true) {
             this.props.navigation.navigate('adminStack', {screen: 'homeScreen'})
@@ -46,12 +78,21 @@ class loginScreen extends React.Component {
                     <Pressable 
                         style={styles.button}
                         onPress={() => 
-                        this.handleNavigation()
-                        // this.props.navigation.navigate('userStack', {screen: "homeScreen"})
+                        this.handleLogin()
                         }
                     >
                         <Text style={styles.buttonText}>
-                            LOL
+                            Login
+                        </Text>
+                    </Pressable>
+                    <Pressable 
+                        style={styles.button}
+                        onPress={() => 
+                        this.handleSignUp()
+                        }
+                    >
+                        <Text style={styles.buttonText}>
+                            Sign Up
                         </Text>
                     </Pressable>
                     <View style={{flexDirection: 'row', marginTop: 20, alignItems: 'center',}}>
