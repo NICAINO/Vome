@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Pressable, Text, View, TextInput, Switch } from 'react-native';
 import { styles } from '../utils/styles';
-import { LinearGradient } from 'expo-linear-gradient';
+import { Ionicons } from '@expo/vector-icons';
 
 class loginScreen extends React.Component {
     constructor(props) {
@@ -10,6 +10,7 @@ class loginScreen extends React.Component {
             username: '',
             password: '',
             adminMode: false,
+            checked: false,
         }
     }
 
@@ -47,32 +48,39 @@ class loginScreen extends React.Component {
 
     handleNavigation() {
         if (this.state.adminMode == true) {
-            this.props.navigation.navigate('adminStack', {screen: 'homeScreen'})
+            this.props.navigation.navigate('adminStack', {screen: 'Home'})
         } else {
-            this.props.navigation.navigate('userStack', {screen: 'homeScreen'})
+            this.props.navigation.navigate('userStack', {screen: 'Home'})
         }
     }
 
     render() {
         return (
-            <View style={{flex: 1, flexDirection: 'column', backgroundColor: '#fafafa'}}>
+            <View style={{flex: 1, flexDirection: 'column', backgroundColor: '#fafafa', alignItems: 'center'}}>
                 <View style={{flex: 3, justifyContent: 'center',}}>
-                    <Text style={{fontSize: 50, color: '#89cff0', textAlign: 'center', fontWeight: 'bold',}}>
-                        Login
-                    </Text>
+                    <Ionicons name='ios-person-circle-outline' size={125} style={{color: '#89cff0'}}/>
                 </View>
                 <View style={{flex: 5, alignItems: 'center'}}>
-                    <TextInput
-                        placeholder = 'Username'
-                        style={styles.loginInput}
-                        onChangeText = {(text) => this.setState({text})}
-                    />
-                    <TextInput
-                        placeholder = 'Password'
-                        style={styles.loginInput}
-                        onChangeText = {(text) => this.setState({text})}
-                        secureTextEntry = {true}
-                    />
+                    <View style={styles.textInputView}>
+                        <Ionicons name='person-outline' size={25} style={{marginRight: 10}}/>
+                        <TextInput
+                            placeholder = 'Username'
+                            style={styles.loginInput}
+                            onChangeText = {(text) => this.setState({text})}
+                        />
+                    </View>
+                    <View style={styles.textInputView}>
+                        <Ionicons name='key-outline' size={25} style={{marginRight: 10}}/>
+                        <TextInput
+                            placeholder = 'Password'
+                            style={styles.loginInput}
+                            onChangeText = {(text) => this.setState({text})}
+                            secureTextEntry = {true}
+                        />
+                    </View>
+                    <Pressable onPress={() => {alert('sukkel')}}>
+                        <Text style={{textAlign: 'center', color: '#89cff0', padding: 5, fontSize: 15}}>Forgot password?</Text>
+                    </Pressable>
                 </View>
                 <View style={{flex: 3, alignItems: 'center',}}>
                     <Pressable 

@@ -1,0 +1,38 @@
+{
+    "homes": [
+        {
+            "name": "huizeliam",
+            "users": {
+                "Liam": {
+                    "pils": 40
+                },
+                "Nica": {
+                    "pils": 20       
+                },
+                "Mike": {
+                    "pils": 32
+                },
+                "Chris": {
+                    "pils": 5
+                }
+            }
+        },
+        {
+            "name": "huizegonz",
+            "users": {
+                "Fernando": {
+                    "pils": 7
+                },
+                "Marijke": {
+                    "pils": 20       
+                },
+                "Nica": {
+                    "pils": 15
+                },
+                "Yasmin": {
+                    "pils": 4
+                }
+            }
+        }
+    ]
+}
