@@ -5,9 +5,10 @@ import { styles } from '../../utils/styles';
 import { StatusBar } from 'react-native';
 import { Image, Icon } from 'react-native-elements';
 import { Ionicons } from '@expo/vector-icons';
-import ReactNativeHapticFeedback from "react-native-haptic-feedback";
-import PilsCard from './cards/pilscard'
-import ShopCard from './cards/shopcard'
+//import ReactNativeHapticFeedback from "react-native-haptic-feedback";
+import HomeCard from './cards/homecard';
+import PilsCard from './cards/pilscard';
+import ShopCard from './cards/shopcard';
 import { Pressable } from 'react-native';
 
 const text = <Text>fakaman</Text>
@@ -37,16 +38,14 @@ class homeScreen extends React.Component {
                         <Ionicons name='settings-outline' size={40} color={'#e0dbd1'}/>
                     </View>
                     <LinearGradient colors={['#ff8a65', '#e57373']} style={{width: '90%', aspectRatio: 1.5, borderRadius: 8, marginHorizontal: '5%',}}>
-
+                        <HomeCard/>
                     </LinearGradient>
                     <Text style={styles.cardHeader}>
                         Dingen:
                     </Text>
                     <ScrollView horizontal={true} style={{height: 200, marginHorizontal: '4%', borderRadius: 8}}>
                             <LinearGradient colors={['#64b5f6', '#0097a7']} style={styles.cards}>
-                                <Pressable
-                                    
-                                >
+                                <Pressable>
                                     <PilsCard/>
                                 </Pressable>
                             </LinearGradient>

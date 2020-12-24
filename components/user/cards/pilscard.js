@@ -42,7 +42,7 @@ export default class PilsCard extends React.Component {
 
     render() {
         return (
-            <View style={{ marginVertical: '2%', marginHorizontal: '4%'}}>
+            <View style={{ marginVertical: 5, marginHorizontal: 10}}>
                 <View> 
                     <Text style={{color: '#000000', fontWeight: 'bold', fontSize: 20}}>
                         Pils: {this.state.userdata.pils}
